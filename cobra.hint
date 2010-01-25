@@ -1,0 +1,7 @@
+category: DotNET Interpreters
+requires: mono mono-Cobra-Lang0.8
+sdesc: "Cobra programming language compiler/interpreter"
+ldesc: "Cobra is a general purpose programming language with a clean, 
+high-level syntax, static and dynamic binding, first class support for 
+unit tests and contracts, compiled performance with scripting 
+conveniences, lambdas and closures, extensions and mixins, and more."

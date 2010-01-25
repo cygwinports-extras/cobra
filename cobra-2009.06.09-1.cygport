@@ -1,0 +1,44 @@
+inherit mono
+
+DESCRIPTION="Cobra programming language for .NET"
+HOMEPAGE="http://cobra-language.com/"
+SRC_URI="http://cobra-language.com/downloads/informal-releases/Cobra-Informal-Release-${PV//./-}.zip"
+SRC_DIR="Cobra-Informal-Release-${PV//./-}"
+
+PKG_NAMES="${PN} mono-Cobra-Lang0.8"
+cobra_CONTENTS="--exclude=mono usr/"
+mono_Cobra_Lang0_8_CONTENTS="usr/lib/mono/gac/"
+
+src_compile() {
+	lndirs
+	cd ${B}/Source
+
+	# ./comp
+	${MONO} Snapshot/cobra.exe -compile -turbo -ert:yes \
+			cobra.cobra -files:files-to-compile.text
+
+	${MONO} cobra.exe -build-standard-library -turbo \
+			Cobra.Lang/AssemblyAttrs.cobra -key-file:Cobra.Lang/Cobra.Lang.snk
+}
+
+src_test() {
+	cd ${B}/Source
+	MONO_PATH=${B}/Source ${MONO} cobra.exe -testify
+}
+
+src_install() {
+	cd ${B}/Source
+	insinto /usr/lib/cobra
+	doins cobra.exe Cobra.Lang.dll
+
+	dogac Cobra.Lang.dll
+
+	mono_wrapper cobra /usr/lib/cobra/cobra.exe
+
+	cd ${B}/Source/Cobra.Lang
+	insinto /usr/lib/cobra/Cobra.Lang
+	doins files.text $(cat files.text | d2u)
+
+	cd ${S}
+	dodoc License.text ReadMe.text Developer/I*.text
+}

@@ -1,0 +1,43 @@
+cobra
+------------------------------------------
+Cobra is a general purpose programming language with a clean, high-level 
+syntax, static and dynamic binding, first class support for unit tests 
+and contracts, compiled performance with scripting conveniences, lambdas 
+and closures, extensions and mixins, and more.
+
+Runtime requirements:
+  mono-2.4.3.1-1
+
+Build requirements:
+  cygport-0.9.80-1
+  mono-2.4.3.1-1
+
+Canonical website:
+  http://cobra-language.com/
+
+Canonical download:
+  http://cobra-language.com/downloads/informal-releases/
+
+-------------------------------------------
+
+Build instructions:
+  unpack cobra-2009.06.09-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./cobra-2009.06.09-X.cygport all
+
+This will create:
+  /usr/src/cobra-2009.06.09-X-src.tar.bz2
+  /usr/src/cobra-2009.06.09-X.tar.bz2
+
+-------------------------------------------
+
+Port Notes:
+
+----- version 2009.06.09-1 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/

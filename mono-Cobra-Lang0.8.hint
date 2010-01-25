@@ -1,0 +1,8 @@
+category: DotNET
+requires: mono
+external-source: cobra
+sdesc: "Cobra programming language runtime"
+ldesc: "Cobra is a general purpose programming language with a clean, 
+high-level syntax, static and dynamic binding, first class support for 
+unit tests and contracts, compiled performance with scripting 
+conveniences, lambdas and closures, extensions and mixins, and more."
