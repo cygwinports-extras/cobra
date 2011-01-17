@@ -2,8 +2,8 @@ inherit mono
 
 DESCRIPTION="Cobra programming language for .NET"
 HOMEPAGE="http://cobra-language.com/"
-SRC_URI="http://cobra-language.com/downloads/informal-releases/Cobra-Informal-Release-${PV//./-}.zip"
-SRC_DIR="Cobra-Informal-Release-${PV//./-}"
+SRC_URI="http://cobra-language.com/downloads/informal-releases/Cobra-${PV//./-}.tar.gz"
+SRC_DIR="Cobra-${PV//./-}"
 
 PKG_NAMES="${PN} mono-Cobra-Lang0.8"
 cobra_CONTENTS="--exclude=mono usr/"
